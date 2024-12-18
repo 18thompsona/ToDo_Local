@@ -12,7 +12,7 @@ const addProject = document.querySelector(".add-project");
 
 const Projects = [];
 const defaultProject = new Project("Default");
-const currentProject = defaultProject;
+let currentProject = defaultProject;
 Projects.push(defaultProject);
 
 
@@ -116,8 +116,19 @@ function displayProjects()
     for (let i = 0; i < Projects.length; i++) {
         const element = document.createElement("button");
         element.textContent = Projects[i].name;
+
+        element.addEventListener("click", (event) => {
+           switchProject(i);
+           console.log("switching")
+        })
+
         projectsElement.append(element)
     }
+}
+
+function switchProject(index){
+    currentProject = Projects[index];
+    loadProject(currentProject);
 }
 
 
