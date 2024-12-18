@@ -6,4 +6,8 @@ export default class Task {
         this.check = check;
         this.description = description;
     }
+
+    flipCheck() {
+        this.check = !this.check;
+    }
 }

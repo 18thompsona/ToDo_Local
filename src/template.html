@@ -15,20 +15,21 @@
                 <h1>Priority List</h1>
             </div>
             <div class="projects"></div>
-            <button class="add-task">Add Task</button>
+            <button class="add-project">Add Project</button>
         </header>
 
         <div class="list"> </div>
 
         <dialog id="add-task-dialog">
             <form id="add-task-form" action="#">
+                <h1>Add Task</h1>
                 <label for="form-title">*Task Name:</label>
                 <input class="form-text-input" id="form-title" type="text" required>
 
                 <label for="form-description">Description:</label>
                 <textarea class="form-description" id="form-description" type="textarea"></textarea>
 
-                <label for="Priority">What is the Priority:</label>
+                <label for="priority-select">What is the Priority:</label>
                 <select form-task-title id="priority-select" form="add-task-form">
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
@@ -39,7 +40,17 @@
                 <label for="form-date">*Due Date:</label>
                 <input class="form-task-date" id="form-date" type="date" required>
 
-                 <button id="form-task-submit" type="submit">Add Book!</button>
+                 <button id="form-task-submit" type="submit">Add Task!</button>
+             </form> 
+         </dialog>
+
+         <dialog id="add-project-dialog">
+            <form id="add-task-form" action="#">
+                <h1>Add Project</h1>
+                <label for="form-project-title">*Project Title:</label>
+                <input class="form-text-input" id="form-project-title" type="text" required>
+
+                 <button id="form-task-submit" type="submit">Add Project!</button>
              </form> 
          </dialog>
     </body>
