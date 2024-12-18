@@ -128,3 +128,5 @@ defaultProject.CreateTask("Title", "2024-12-22 08:00", "Low", true, lorem);
 
 displayProjects();
 loadProject(defaultProject);
+
+//A quick test
