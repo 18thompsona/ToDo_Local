@@ -14,6 +14,11 @@ header{
     padding: 0em 5em;
 }
 
+.projects{
+    display: flex;
+    gap: 1em;
+}
+
 .list{
     width: 70vw;
     margin: auto;
@@ -106,4 +111,14 @@ h2{
 #form-task-submit{
     align-self: flex-end;
     margin-right: 1em;
+}
+
+
+.project-button{
+    border: 2px solid lightblue;
+    border-radius: 25px;
+}
+
+.project-selected{
+    border: 2px solid blue;
 }

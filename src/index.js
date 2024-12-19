@@ -10,7 +10,8 @@ const projectdialog = document.querySelector("#add-project-dialog")
 
 const addProject = document.querySelector(".add-project");
 
-const Projects = [];
+let Projects = [];
+let ProjectsButtons = [];
 const defaultProject = new Project("Default");
 let currentProject = defaultProject;
 Projects.push(defaultProject);
@@ -113,21 +114,34 @@ function loadProject(project)
 function displayProjects()
 {
     projectsElement.innerHTML = "";
+    ProjectsButtons = [];
     for (let i = 0; i < Projects.length; i++) {
         const element = document.createElement("button");
         element.textContent = Projects[i].name;
-
+        element.classList.add("project-button")
         element.addEventListener("click", (event) => {
            switchProject(i);
            console.log("switching")
         })
 
-        projectsElement.append(element)
+        ProjectsButtons.push(element);
+        projectsElement.append(element);
+    }
+    for (let j = 0; j < Projects.length; j++) {
+        if(currentProject === Projects[j]){
+            switchProject(j);
+            break;
+        }
     }
 }
 
 function switchProject(index){
     currentProject = Projects[index];
+
+    for (let i = 0; i < ProjectsButtons.length; i++) {
+        ProjectsButtons[i].classList.remove("project-selected");
+    }
+    ProjectsButtons[index].classList.add("project-selected");
     loadProject(currentProject);
 }
 
@@ -138,6 +152,6 @@ defaultProject.CreateTask("Title", "2024-12-22 08:00", "Low", false, lorem);
 defaultProject.CreateTask("Title", "2024-12-22 08:00", "Low", true, lorem);
 
 displayProjects();
-loadProject(defaultProject);
+switchProject(0);
 
 //A quick test
